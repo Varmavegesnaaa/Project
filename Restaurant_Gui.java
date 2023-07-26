@@ -949,7 +949,7 @@ class Main
         frame4.setVisible(true);
     }
 }
-class Rest_gui 
+class Restaurant_Gui 
 {
     public static void main(String[] args) {
         Main obj = new Main();
