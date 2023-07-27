@@ -55,12 +55,12 @@ class Main
     void menu()
     {
         frame = new JFrame("Restaurant menu");
-        JLabel bg = new JLabel(new ImageIcon("C:\\Restaurant_Billing\\betchlogo.png")); 
+        JLabel bg = new JLabel(new ImageIcon("C:\\Restaurant_Bill_Generator\\betchlogo.png")); 
         frame.add(bg);
         bg.setBounds(400, 0, 750, 300);
         frame.getContentPane().setBackground(Color.black);
 
-        JLabel chefbg = new JLabel(new ImageIcon("C:\\Restaurant_Billing\\chef.png")); 
+        JLabel chefbg = new JLabel(new ImageIcon("C:\\Restaurant_Bill_Generator\\chef.png")); 
         frame.add(chefbg);
         chefbg.setBounds(350, 60, 200, 200);
 
@@ -880,11 +880,11 @@ class Main
         int m = 120,n = 120;
         frame4 = new JFrame("BILLING");
         frame4.getContentPane().setBackground(Color.black);
-        JLabel chefimg = new JLabel(new ImageIcon("C:\\Restaurant_Billing\\billChef.png")); 
+        JLabel chefimg = new JLabel(new ImageIcon("C:\\Restaurant_Bill_Generator\\billChef.png")); 
         chefimg.setBounds(350, 0, 100, 100);
         frame4.add(chefimg);
 
-        JLabel resimg = new JLabel(new ImageIcon("C:\\Restaurant_Billing\\resImg.png")); 
+        JLabel resimg = new JLabel(new ImageIcon("C:\\Restaurant_Bill_Generator\\resImg.png")); 
         resimg.setBounds(400, 0, 500, 80);
         frame4.add(resimg);
 
@@ -940,9 +940,33 @@ class Main
         JLabel thnk = new JLabel("-- THANK YOU VISIT AGAIN -- ");
         thnk.setBounds(550, m+100, 300, 20);
         thnk.setForeground(c);
+        JButton menu = new JButton("MENU ");
+        menu.setBounds(450, m+150, 100, 30);
+        menu.setFont(new Font("Arial", Font.BOLD, 14));
+        menu.setBackground(c);
+
+        JButton exit = new JButton("EXIT");
+        exit.setBounds(700, m+150, 100, 30);
+        exit.setFont(new Font("Arial", Font.BOLD, 14));
+        exit.setBackground(c);
+        frame4.add(exit);
+        frame4.add(menu);
         frame4.add(thnk);
         frame4.add(tt1);
         frame4.add(total);
+        
+        menu.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e)
+            {
+                menu();
+            }
+        });
+        exit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e)
+            {
+                System.exit(0);
+            }
+        });
         frame4.setSize(2100, 1000);
         frame4.setLayout(null);
         frame4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
